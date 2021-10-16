@@ -1,5 +1,6 @@
 package ru.sber.services
 
+
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Condition
 import org.springframework.context.annotation.ConditionContext
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component
 
 class ProdProfileCondition : Condition {
     override fun matches(context: ConditionContext, metadata: AnnotatedTypeMetadata): Boolean {
-        return context.environment.activeProfiles.contains("qa")
+        return context.environment.activeProfiles.contains("prod")
     }
 }
 

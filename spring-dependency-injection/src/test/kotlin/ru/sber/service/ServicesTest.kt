@@ -38,6 +38,7 @@ class ServicesTest {
         assertEquals("Service was injected into FieldInjectionService", fieldInjectionService.toString())
     }
 
+
     @Test
     fun `getBean should return setterInjectionService successfully`() {
         // given
@@ -50,13 +51,14 @@ class ServicesTest {
         assertEquals("Service was injected into SetterInjectionService", setterInjectionService.toString())
     }
 
+
     @Test
     fun `severalBeanInjectionService should have two dependencies`() {
         // given
         val context = AnnotationConfigApplicationContext(ServicesConfig::class.java)
 
         // when
-        val severalBeanInjectionService = context.getBean("severalBeanInjectionService") as SeveralBeanInjectionService
+        val severalBeanInjectionService = context.getBean("severalBeanInjectionService") as  SeveralBeanInjectionService
 
         // then
         assertEquals(
@@ -64,6 +66,7 @@ class ServicesTest {
             severalBeanInjectionService.toString()
         )
     }
+
 
     @Test
     fun `primaryBeanInjectionService should return SecondPrimaryServiceImpl dependency`() {
@@ -80,6 +83,10 @@ class ServicesTest {
         )
     }
 
+
+
+
+
     @Test
     fun `qualifierBeanInjectionService should return only SecondQualifierServiceImpl dependency`() {
         // given
@@ -95,6 +102,7 @@ class ServicesTest {
             qualifierBeanInjectionService.toString()
         )
     }
+
 
     @Test
     fun `conditionalBeanInjectionService should return ConditionalService dependency`() {
@@ -115,4 +123,5 @@ class ServicesTest {
             conditionalBeanInjectionService.toString()
         )
     }
+
 }

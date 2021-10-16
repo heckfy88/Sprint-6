@@ -22,6 +22,7 @@ class SecondServiceImpl : ServiceInterface {
     }
 }
 
+
 @Component
 class SeveralBeanInjectionService {
     @Autowired
@@ -37,6 +38,7 @@ class SeveralBeanInjectionService {
 class SeveralServicesConfig {
     @Bean
     fun services(): ArrayList<ServiceInterface> {
-        return arrayListOf(FirstServiceImpl())
+        return arrayListOf(FirstServiceImpl(), SecondServiceImpl())
     }
 }
+
