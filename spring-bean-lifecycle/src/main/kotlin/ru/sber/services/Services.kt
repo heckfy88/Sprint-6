@@ -21,7 +21,7 @@ class CallbackBean : InitializingBean, DisposableBean {
     }
 }
 
-class CombinedBean: InitializingBean, MyBeanPostProcessor() {
+class CombinedBean: InitializingBean,  {
 
     var postProcessBeforeInitializationOrderMessage: String? = null
     var postConstructOrderMessage: String? = null
@@ -29,10 +29,7 @@ class CombinedBean: InitializingBean, MyBeanPostProcessor() {
     var afterPropertiesSetOrderMessage: String? = null
     var postProcessAfterInitializationOrderMessage: String? = null
 
-    override fun postProcessBeforeInitialization(bean: Any, beanName: String): Any? {
-        postProcessBeforeInitializationOrderMessage = "postProcessBeforeInitialization() is called"
-        return super.postProcessBeforeInitialization(bean, beanName)
-    }
+
 
     @PostConstruct
     fun postConstruct() {
@@ -47,10 +44,6 @@ class CombinedBean: InitializingBean, MyBeanPostProcessor() {
         customInitOrderMessage = "customInit() is called"
     }
 
-    override fun postProcessAfterInitialization(bean: Any, beanName: String): Any? {
-        postProcessAfterInitializationOrderMessage = "postProcessAfterInitialization() is called"
-        return super.postProcessAfterInitialization(bean, beanName)
-    }
 
 
 
