@@ -29,8 +29,6 @@ class CombinedBean: InitializingBean  {
     var afterPropertiesSetOrderMessage: String? = null
     var postProcessAfterInitializationOrderMessage: String? = null
 
-
-
     @PostConstruct
     fun postConstruct() {
         postConstructOrderMessage = "postConstruct() is called"
@@ -43,11 +41,6 @@ class CombinedBean: InitializingBean  {
     fun customInit() {
         customInitOrderMessage = "customInit() is called"
     }
-
-
-
-
-
 
 }
 
