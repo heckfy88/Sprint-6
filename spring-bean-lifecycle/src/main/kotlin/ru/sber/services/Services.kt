@@ -21,7 +21,7 @@ class CallbackBean : InitializingBean, DisposableBean {
     }
 }
 
-class CombinedBean: InitializingBean,  {
+class CombinedBean: InitializingBean  {
 
     var postProcessBeforeInitializationOrderMessage: String? = null
     var postConstructOrderMessage: String? = null
